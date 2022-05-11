@@ -1,21 +1,49 @@
-# Welcome to the [Building Your Own Programming Language](https://frontendmasters.com/courses/programming-language/) course!
+# 🍃 Leaf lang
 
-## Getting started
+Just another humble LISP implementation that compiles to our beloved Javascript.
 
-Before starting the course, please have [VSCode](https://code.visualstudio.com/) or another code editor installed. Make sure to install the testing framework [jest](https://jestjs.io/docs/en/getting-started).
+## Run Locally
 
-`yarn add --dev jest`
+Clone the project
 
-OR
+```bash
+  git clone https://github.com/DaviTeodoro/leaf-lang
+```
 
-`npm install --save-dev jest`
+Go to the project directory
 
-Each branch covers different concepts discussed during the course.
-Branches [4](https://github.com/stevekinney/dropbear/tree/4-parsing-solutions) and [6](https://github.com/stevekinney/dropbear/tree/6-max-method-in-environment-solution) have solutions to exercises covered in previous branches.
-the final version of the project is on branch [10-finalversion](https://github.com/stevekinney/dropbear/tree/10-finalversion).
+```bash
+  cd leaf-lang
+```
 
-This course was written and recorded by Frontend Masters. The code here is licensed under the Apache 2.0 license and the course notes are licensed under the Creative Commons Attribution-NonCommercial 4.0 International license.
+Install dependencies
 
-## See a Bug or Typo?
+```bash
+  yarn
+```
 
-Pull requests are welcome!
+Start the repl
+
+```bash
+  yarn start
+```
+
+## Running Tests
+
+To run tests, run the following commands
+
+```bash
+  yarn add --dev jest
+```
+
+```bash
+  yarn run test
+```
+
+## Authors
+
+- [@daviteodoro](https://github.com/daviteodoro)
+
+## Acknowledgements
+
+- [Dropebear](https://github.com/stevekinney/dropbear)
