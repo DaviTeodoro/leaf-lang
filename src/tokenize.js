@@ -4,6 +4,9 @@ const {
   isNumber,
   isParenthesis,
   isQuote,
+  isDot,
+  is_,
+  isOperator,
 } = require('./identify');
 
 const tokenize = (input) => {
@@ -26,11 +29,11 @@ const tokenize = (input) => {
 
     if (isNumber(char)) {
       const number = [];
-      while (isNumber(input[cursor])) {
+      while (isNumber(input[cursor]) || isDot(input[cursor])) {
         number.push(input[cursor]);
         cursor++;
       }
-      tokens.push({ type: 'Number', value: parseInt(number.join('')) });
+      tokens.push({ type: 'Number', value: +number.join('') });
       continue;
     }
 

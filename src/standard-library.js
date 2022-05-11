@@ -17,7 +17,7 @@ const e = Math.E;
 // const floor = Math.floor;
 // const ceil = Math.ceil;
 // const round = Math.round;
-const random = Math.random();
+const rand = Math.random();
 // const sin = Math.sin;
 // const cos = Math.cos;
 // const tan = Math.tan;
@@ -42,7 +42,7 @@ const environment = {
   e,
   max,
   min,
-  random,
+  rand,
 };
 
 module.exports = { environment };
