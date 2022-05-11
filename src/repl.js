@@ -9,26 +9,39 @@ const ask = () =>
       type: 'input',
       name: 'COMMAND',
       message: '>',
-      default: 'add 2 3',
     },
   ]);
 
 const repl = async () => {
   try {
     const { COMMAND } = await ask();
-    if (COMMAND.trim()) {
+
+    if (COMMAND.trim() === 'help') {
+      console.log(
+        `OK, here is some information to help you get started:
+        Type ${chalk.green('(add 2 3)')} to get the result of 2 + 3.
+        Type ${chalk.green('(def x 3)')} to define a variable x.
+        Type ${chalk.green('(x)')} to get the value of x.
+        Or visit ${chalk.green('Docs')} at `,
+      );
+    } else if (COMMAND.trim()) {
       const result = await parseAndEvaluate(COMMAND);
       console.log(chalk.green(`${result}`));
     }
   } catch (error) {
-    console.log(chalk.red(`${error.message}`));
+    console.error(chalk.red(`${error.message}`));
   }
   repl();
 };
 
 if (require.main === module) {
   console.log(
-    chalk.red(`Welcome to the ${chalk.bgYellow('Leaf')} Programming Language`),
+    `Welcome to 🍃 ${chalk.bgGreenBright(chalk.black.bold('Leaf Lang!'))} 🍃
+    Type ${chalk.green('(add 2 3)')} to get the result of 2 + 3.
+    Type ${chalk.green('(def x 3)')} to define a variable x.
+    Type ${chalk.green('(x)')} to get the value of x.
+    For more information, type ${chalk.green('(help)')}.
+    Or visit ${chalk.green('Docs')} at `,
   );
   repl();
 }
